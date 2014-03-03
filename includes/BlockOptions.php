@@ -22,6 +22,16 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                     'both' => 'Images and text',
                     'dropdown' => 'Dropdown'
                     )
+                ),
+            'layout-mode' => array(
+                'type' => 'select',
+                'name' => 'layout-mode',
+                'label' => 'Layout mode',
+                'default' => 'dropdown',
+                'options' => array(
+                    'vertical' => 'Vertical',
+                    'horizontal' => 'Horizontal'
+                    )
                 )
             )
         );
