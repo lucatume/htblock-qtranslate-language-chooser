@@ -38,6 +38,7 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                 'type' => 'text',
                 'name' => 'horizontal-spacing',
                 'label' => 'Horizontal Spacing',
+                'default' => '0.5rem',
                 'tooltip' => 'Set the px horizontal spacing between the icons.'
                 ),
 
@@ -45,6 +46,7 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                 'type' => 'text',
                 'name' => 'vertical-spacing',
                 'label' => 'Vertical Spacing',
+                'default' => '0.5rem',
                 'tooltip' => 'Set the px vertical spacing between the icons.'
                 )
             )
