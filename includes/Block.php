@@ -30,8 +30,8 @@ class Block extends \HeadwayBlockAPI
             $selector .= '.block-original-' . $block_id;
         }
         $layoutMode = \HeadwayBlocksData::get_block_setting($block, 'layout-mode', 'horizontal');
-        $marginRight = '0.5rem';
-        $marginBottom = '0.5rem';
+        $marginRight = \HeadwayBlocksData::get_block_setting($block, 'horizontal-spacing', '0.5rem');
+        $marginBottom = \HeadwayBlocksData::get_block_setting($block, 'vertical-spacing', '0.5rem');
         $out = '';
         if ($layoutMode == 'horizontal') {
             $out .= $selector . ' ul.qtrans_language_chooser > li {display:inline-block;';
