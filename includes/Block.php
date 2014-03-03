@@ -19,6 +19,10 @@ class Block extends \HeadwayBlockAPI
     }
     public function dynamic_css($block_id, $block, $original_block = null)
     {
+        $displayMode = \HeadwayBlocksData::get_block_setting($block, 'display-mode', 'dropdown');
+        if ($displayMode == 'dropdown') {
+            return;
+        }
         $selector = '#block-' . $block_id;
         if (is_array($original_block)) {
             $block_id = $original_block['id'];
