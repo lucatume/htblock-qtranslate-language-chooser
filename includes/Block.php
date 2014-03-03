@@ -8,7 +8,15 @@ class Block extends \HeadwayBlockAPI
     public $name = 'qTranslate language chooser';
     public $options_class = '\qtblock\BlockOptions';
     public $description = 'An Headway block to display qTranslate plugin language chooser on the page.';
-
+    public function init(){
+        // hook the action to load the AJAX settings
+        add_action('headway_visual_editor_scripts', array($this,'printOptionsScripts'));
+    }
+    public function printOptionsScripts()
+    {
+       $out = '<script>alert("some");</script>';
+       echo $out;
+    }
     public function content($block)
     {
         if (function_exists('qtrans_generateLanguageSelectCode')) {
