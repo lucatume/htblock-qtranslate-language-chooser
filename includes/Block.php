@@ -32,6 +32,7 @@ class Block extends \HeadwayBlockAPI
         $layoutMode = \HeadwayBlocksData::get_block_setting($block, 'layout-mode', 'horizontal');
         $marginRight = \HeadwayBlocksData::get_block_setting($block, 'horizontal-spacing', '0.5rem');
         $marginBottom = \HeadwayBlocksData::get_block_setting($block, 'vertical-spacing', '0.5rem');
+        $titleSpacing = \HeadwayBlocksData::get_block_setting($block, 'title-spacing', '0.5rem');
         $out = '';
         if ($layoutMode == 'horizontal') {
             $out .= $selector . ' ul.qtrans_language_chooser > li {display:inline-block;';
@@ -39,6 +40,12 @@ class Block extends \HeadwayBlockAPI
             $out .= 'margin-bottom:' . $marginBottom . ';';
             $out .= '}';
         }
+        $selectorAndContent = $selector . '> .block-content';
+        $out .= $selectorAndContent . ' > .block-title';
+        $out .= ',' . $selectorAndContent . ' > .block-subtitle';
+        $out .= ',' . $selectorAndContent . ' > hgroup';
+        $out .= '{margin-bottom: ' . $titleSpacing . ';';
+        $out .= '}';
         return $out;
     }
 }

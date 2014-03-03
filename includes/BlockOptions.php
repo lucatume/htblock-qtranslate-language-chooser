@@ -39,15 +39,21 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                 'name' => 'horizontal-spacing',
                 'label' => 'Horizontal Spacing',
                 'default' => '0.5rem',
-                'tooltip' => 'Set the px horizontal spacing between the icons.'
+                'tooltip' => 'Set the horizontal spacing between the icons.'
                 ),
-
             'vertical-spacing' => array(
                 'type' => 'text',
                 'name' => 'vertical-spacing',
                 'label' => 'Vertical Spacing',
                 'default' => '0.5rem',
-                'tooltip' => 'Set the px vertical spacing between the icons.'
+                'tooltip' => 'Set the vertical spacing between the icons.'
+                ),
+            'title-block-vertical-spacing' => array(
+                'type' => 'text',
+                'name' => 'title-block-vertical-spacing',
+                'label' => 'Title Spacing',
+                'default' => '0.5rem',
+                'tooltip' => 'Set the vertical spacing between the icons and the block title and subtitle if any.'
                 )
             )
     );
