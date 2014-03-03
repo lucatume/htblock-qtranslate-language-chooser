@@ -31,11 +31,5 @@ class Block extends \HeadwayBlockAPI
             $out .= $selector . ' ul.qtrans_language_chooser > li {display:inline-block;}';
         }
         return $out;
-        // return '
-        // ' . $selector . ' .nav-horizontal ul.menu > li > a,
-        // ' . $selector . ' .nav-search-active .nav-search {
-        //     height: ' . $block_height . 'px;
-        //     line-height: ' . $block_height . 'px;
-        // }';
-    } 
+    }
 }
