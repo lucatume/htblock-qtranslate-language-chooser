@@ -26,9 +26,14 @@ class Block extends \HeadwayBlockAPI
             $selector .= '.block-original-' . $block_id;
         }
         $layoutMode = \HeadwayBlocksData::get_block_setting($block, 'layout-mode', 'horizontal');
+        $marginRight = '0.5rem';
+        $marginBottom = '0.5rem';
         $out = '';
         if ($layoutMode == 'horizontal') {
-            $out .= $selector . ' ul.qtrans_language_chooser > li {display:inline-block;}';
+            $out .= $selector . ' ul.qtrans_language_chooser > li {display:inline-block;';
+            $out .= 'margin-right:' . $marginRight . ';';
+            $out .= 'margin-bottom:' . $marginBottom . ';';
+            $out .= '}';
         }
         return $out;
     }
