@@ -9,7 +9,6 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
         );
 
     public $inputs = array(
-
         'settings' => array(
             'display-mode' => array(
                 'type' => 'select',
@@ -21,7 +20,8 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                     'text' => 'Text',
                     'both' => 'Images and text',
                     'dropdown' => 'Dropdown'
-                    )
+                    ),
+                'tooltip' => 'How to show the language selection possibilities.'
                 ),
             'layout-mode' => array(
                 'type' => 'select',
@@ -31,8 +31,22 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                 'options' => array(
                     'vertical' => 'Vertical',
                     'horizontal' => 'Horizontal'
-                    )
+                    ),
+                'tooltip' => 'Show the language images and/or text in a vertical list or on an horizontal line.'
+                ),
+            'horizontal-spacing' => array(
+                'type' => 'text',
+                'name' => 'horizontal-spacing',
+                'label' => 'Horizontal Spacing',
+                'tooltip' => 'Set the px horizontal spacing between the icons.'
+                ),
+
+            'vertical-spacing' => array(
+                'type' => 'text',
+                'name' => 'vertical-spacing',
+                'label' => 'Vertical Spacing',
+                'tooltip' => 'Set the px vertical spacing between the icons.'
                 )
             )
-        );
+    );
 }
