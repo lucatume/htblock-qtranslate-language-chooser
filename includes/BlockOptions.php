@@ -48,12 +48,12 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                 'default' => '0.5rem',
                 'tooltip' => 'Set the vertical spacing between the icons.'
                 ),
-            'title-block-vertical-spacing' => array(
+            'title-spacing' => array(
                 'type' => 'text',
-                'name' => 'title-block-vertical-spacing',
+                'name' => 'title-spacing',
                 'label' => 'Title Spacing',
                 'default' => '0.5rem',
-                'tooltip' => 'Set the vertical spacing between the icons and the block title and subtitle if any.'
+                'tooltip' => 'Set the spacing between the icons and the block title and subtitle if any.'
                 )
             )
     );
