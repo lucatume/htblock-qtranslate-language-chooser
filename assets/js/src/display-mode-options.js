@@ -13,12 +13,13 @@ jQuery(document).ready(function($) {
                     // if no option selected then do nothing
                     return;
                 }
+                // get all actors and targets
                 var parent = $('#sub-tab-settings-content').has(current);
-                // if the selected option is dropdown then
-                // hide non relevant options
                 var layoutModeSelector = parent.find('#input-layout-mode');
                 var horizontalSpacingSelector = parent.find('#input-horizontal-spacing');
                 var verticalSpacingSelector = parent.find('#input-vertical-spacing');
+                // if the selected option is dropdown then
+                // hide non relevant options
                 if (selected === 'Dropdown') {
                     // hide all the other selectors
                     layoutModeSelector.hide();
