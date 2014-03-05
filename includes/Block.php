@@ -40,6 +40,7 @@ class Block extends \HeadwayBlockAPI
             $displayMode = \HeadwayBlocksData::get_block_setting($block, 'display-mode', 'dropdown');
             $out = qtrans_generateLanguageSelectCode($displayMode);
             echo $out;
+            return;
         }
         echo 'Either qTranslate plugin is not installed or it\'s not activated';
     }
