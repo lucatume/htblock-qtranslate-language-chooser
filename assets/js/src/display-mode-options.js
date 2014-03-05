@@ -1,9 +1,11 @@
 /*global jQuery:false, document:false, console:false*/
 jQuery(document).ready(function($) {
     'use strict';
-    // the select that will trigger the showing or hiding of settings
+    // run the script on each select
     jQuery('.panel-block-type-qtblock #input-display-mode select').each(
-        function(index, Element) {
+        function() {
+            // when selected option change make a check and
+            // and hide or show options
             $(this).change(function() {
                 var current = $(this);
                 var selected = current.find('option:selected').text();
