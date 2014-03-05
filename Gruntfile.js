@@ -12,11 +12,11 @@ module.exports = function( grunt ) {
 					' * Licensed GPLv2+' +
 					' */\n'
 			},
-			qtranslate_language_chooser: {
+			qtblock_visual_editor: {
 				src: [
-					'assets/js/src/qtranslate_language_chooser.js'
+					'assets/js/src/display-mode-options.js'
 				],
-				dest: 'assets/js/qtranslate_language_chooser.js'
+				dest: 'assets/js/qtblock_visual_editor.js'
 			}
 		},
 		jshint: {
@@ -45,7 +45,7 @@ module.exports = function( grunt ) {
 		uglify: {
 			all: {
 				files: {
-					'assets/js/qtranslate_language_chooser.min.js': ['assets/js/qtranslate_language_chooser.js']
+					'assets/js/qtblock_visual_editor.min.js': ['assets/js/qtblock_visual_editor.js']
 				},
 				options: {
 					banner: '/*! <%= pkg.title %> - v<%= pkg.version %>\n' +

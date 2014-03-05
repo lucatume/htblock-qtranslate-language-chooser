@@ -14,7 +14,7 @@ class BlockOptions extends \HeadwayBlockOptionsAPI
                 'type' => 'select',
                 'name' => 'display-mode',
                 'label' => 'Display mode',
-                'default' => 'dropdown',
+                'default' => 'image',
                 'options' => array(
                     'image' => 'Images',
                     'text' => 'Text',
