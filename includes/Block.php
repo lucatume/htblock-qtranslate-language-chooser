@@ -3,7 +3,6 @@ namespace qtblock;
 
 class Block extends \HeadwayBlockAPI
 {
-
     public $id = 'qtblock';
     public $name = 'qTranslate language chooser';
     public $options_class = '\qtblock\BlockOptions';
@@ -17,7 +16,8 @@ class Block extends \HeadwayBlockAPI
         // load minified script version by default
         $postfix = '.min';
         if (defined('SCRIPT_DEBUG')) {
-            // load non minified script version if script debug is active
+            // load non minified scrip
+            // t version if script debug is active
             $postfix = '';
         }
         $src = QTBLOCK_BLOCK_URL . "assets/js/qtblock_visual_editor$postfix.js";
@@ -41,6 +41,7 @@ class Block extends \HeadwayBlockAPI
             $out = qtrans_generateLanguageSelectCode($displayMode);
             echo $out;
         }
+        echo 'Either qTranslate plugin is not installed or it\'s not activated';
     }
     public function dynamic_css($block_id, $block, $original_block = null)
     {
