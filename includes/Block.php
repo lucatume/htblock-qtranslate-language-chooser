@@ -18,10 +18,17 @@ class Block extends \HeadwayBlockAPI
         if (defined('SCRIPT_DEBUG')) {
             $postfix = '';
         }
-        // $src = QTBLOCK_BLOCK_PATH . "assets/js/qtblock_visual_editor$postfix.js";
-        $out = '<script>';
-        // $out .= file_get_contents($src);
-        $out .= 'alert("Go!");';
+        $src = QTBLOCK_BLOCK_URL . "assets/js/qtblock_visual_editor$postfix.js";
+        $this->appendScript($src);
+    }
+    protected function appendScript($src)
+    {
+        $out = '';
+        $out .= '<script type="text/javascript">';
+        $out .= 'var script   = document.createElement("script");
+        script.type  = "text/javascript";
+        script.src  = "' . $src . '"
+        document.body.appendChild(script)';
         $out .= '</script>';
         echo $out;
     }
