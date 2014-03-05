@@ -14,8 +14,10 @@ class Block extends \HeadwayBlockAPI
     }
     public function printVisualEditorScripts()
     {
+        // load minified script version by default
         $postfix = '.min';
         if (defined('SCRIPT_DEBUG')) {
+            // load non minified if script debug is active
             $postfix = '';
         }
         $src = QTBLOCK_BLOCK_URL . "assets/js/qtblock_visual_editor$postfix.js";
