@@ -19,14 +19,14 @@ jQuery(document).ready(function($) {
         // hide non relevant options
         if (selected === 'Dropdown') {
             // hide all the other selectors
-            layoutModeSelector.hide();
-            horizontalSpacingSelector.hide();
-            verticalSpacingSelector.hide();
+            layoutModeSelector.fadeOut(400);
+            horizontalSpacingSelector.fadeOut(400);
+            verticalSpacingSelector.fadeOut(400);
         } else {
             // show the other selectors
-            layoutModeSelector.show();
-            horizontalSpacingSelector.show();
-            verticalSpacingSelector.show();
+            layoutModeSelector.fadeIn(400);
+            horizontalSpacingSelector.fadeIn(400);
+            verticalSpacingSelector.fadeIn(400);
         }
     }
     // run the script on each select
