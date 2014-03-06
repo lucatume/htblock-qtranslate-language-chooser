@@ -16,6 +16,7 @@ class Main
 
         require_once dirname(__FILE__) . '/Block.php';
         require_once dirname(__FILE__) . '/BlockOptions.php';
+        require_once dirname(__FILE__) . '/BlockOptionsHandler.php';
 
         return headway_register_block('\qtblock\Block', plugins_url(false, __FILE__));
     }
