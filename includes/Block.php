@@ -7,32 +7,10 @@ class Block extends \HeadwayBlockAPI
     public $name = 'qTranslate language chooser';
     public $options_class = '\qtblock\BlockOptions';
     public $description = 'An Headway block to display qTranslate plugin language chooser on the page.';
+    protected $options_handler = null;
     public function init()
     {
-        add_action('headway_block_options_' . $this->id, array($this,'printVisualEditorScripts'));
-    }
-    public function printVisualEditorScripts()
-    {
-        // load minified script version by default
-        $postfix = '.min';
-        if (defined('SCRIPT_DEBUG')) {
-            // load non minified scrip
-            // t version if script debug is active
-            $postfix = '';
-        }
-        $src = QTBLOCK_BLOCK_URL . "assets/js/qtblock_visual_editor$postfix.js";
-        $this->appendScript($src);
-    }
-    protected function appendScript($src)
-    {
-        $out = '';
-        $out .= '<script type="text/javascript">';
-        $out .= 'var script   = document.createElement("script");
-        script.type  = "text/javascript";
-        script.src  = "' . $src . '"
-        document.body.appendChild(script)';
-        $out .= '</script>';
-        echo $out;
+        $this->options_handler = new \qtblock\BlockOptionsHandler($this->id);
     }
     public function content($block)
     {
