@@ -8,9 +8,31 @@ class Block extends \HeadwayBlockAPI
     public $options_class = '\qtblock\BlockOptions';
     public $description = 'An Headway block to display qTranslate plugin language chooser on the page.';
     protected $options_handler = null;
+    protected $content = true;
     public function init()
     {
         $this->options_handler = new \qtblock\BlockOptionsHandler($this->id);
+        add_action('headway_before_block', array($this, 'bufferOutput'));
+        add_action('headway_after_block', array($this, 'maybePrintBlock'));
+    }
+    public function bufferOutput($block)
+    {
+        if ($block['type'] != $this->id) {
+            return;
+        }
+        ob_start();
+    }
+    public function maybePrintBlock($block)
+    {
+        if ($block['type'] != $this->id) {
+            return;
+        }
+        $out = ob_get_contents();
+        ob_end_clean();
+        if (!$this->content) {
+            return;
+        }
+        echo $out;
     }
     public function content($block)
     {
@@ -20,7 +42,7 @@ class Block extends \HeadwayBlockAPI
             echo $out;
             return;
         }
-        echo 'Either qTranslate plugin is not installed or it\'s not activated';
+        $this->content = false;
     }
     public function dynamic_css($block_id, $block, $original_block = null)
     {
